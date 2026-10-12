@@ -1,0 +1,808 @@
+   /* ARQUIVO INEXPLICÁVEL
+   Folha de estilos principal */
+
+/* ---------- 1. Variáveis globais ---------- */
+
+:root {
+    --bg: #d7d5c9;
+    --paper: #f3f0e4;
+    --ink: #272b25;
+    --green: #344d37;
+    --line: #a5a593;
+    --link: #1c4d79;
+    --muted: #696d61;
+}
+
+/* ---------- 2. Reset e estilos gerais ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    background-image: radial-gradient(
+        #bcbcaf 0.6px,
+        transparent 0.6px
+    );
+    background-size: 5px 5px;
+    color: var(--ink);
+    font: 13px Verdana, Arial, sans-serif;
+}
+
+a {
+    color: var(--link);
+}
+
+a:hover {
+    color: #8b3d30;
+    text-decoration: none;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    padding: 8px;
+    border: 1px solid #a8aa9b;
+    background: #fbfaf4;
+    color: #292d27;
+    font: 12px Verdana;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.tiny {
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.center {
+    text-align: center;
+}
+
+/* ---------- 3. Faixa superior ---------- */
+
+.topline {
+    padding: 7px max(calc((100% - 1040px) / 2), 16px);
+    background: #242b24;
+    color: #e4e2d6;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+}
+
+.topline span {
+    color: #b8c1ad;
+    letter-spacing: 0;
+}
+
+/* ---------- 4. Cabeçalho ---------- */
+
+.masthead {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1040px;
+    margin: auto;
+    padding: 22px 14px 18px;
+}
+
+.logo-mark {
+    width: 57px;
+    height: 57px;
+    border: 3px double var(--green);
+    background: #e8e5d8;
+    color: var(--green);
+    font: bold 44px Georgia, serif;
+    text-align: center;
+    line-height: 52px;
+    transform: rotate(-5deg);
+}
+
+h1 {
+    margin: 0;
+    color: #283b2b;
+    font: normal 32px Georgia, serif;
+    letter-spacing: -1px;
+}
+
+h1 em {
+    color: #7a4b3e;
+    font-weight: normal;
+}
+
+.tagline {
+    margin: 7px 0 0;
+    color: #62675b;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.header-stamp {
+    margin-left: auto;
+    padding: 8px 12px;
+    border: 1px dashed #8e9583;
+    color: #666d5c;
+    font-size: 9px;
+    text-align: center;
+    transform: rotate(4deg);
+}
+
+.header-stamp b {
+    color: #40533c;
+    font: bold 19px Georgia, serif;
+}
+
+/* ---------- 5. Navegação ---------- */
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 4px;
+    border: 1px solid #243728;
+    background: var(--green);
+}
+
+.nav-link {
+    padding: 11px 17px;
+    border: 0;
+    background: transparent;
+    color: #f1f0e5;
+    font: bold 11px Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #e3e0d2;
+    color: #2e4230;
+}
+
+/* ---------- 6. Aviso da comunidade ---------- */
+
+.notice {
+    max-width: 1040px;
+    margin: 10px auto 16px;
+    padding: 9px 12px;
+    border: 1px solid #b5b19e;
+    background: #ece8d9;
+    color: #575b4f;
+    font-size: 11px;
+}
+
+.notice-extra {
+    color: #7c4b3d;
+    font-style: italic;
+}
+
+/* ---------- 7. Layout principal ---------- */
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 245px;
+    gap: 16px;
+    max-width: 1040px;
+    margin: auto;
+    padding: 0 0 22px;
+}
+
+.main-column,
+.sidebar {
+    min-width: 0;
+}
+
+/* ---------- 8. Painéis ---------- */
+
+.panel {
+    margin-bottom: 13px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 2px 2px 0 #c2c0b3;
+}
+
+.panel-title {
+    padding: 8px 10px;
+    border-bottom: 1px solid #b6b6a5;
+    background: #e3e1d4;
+    color: #40553d;
+    font: bold 10px Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* ---------- 9. Apresentação ---------- */
+
+.welcome {
+    padding-bottom: 15px;
+}
+
+.welcome h2 {
+    margin: 15px 16px 8px;
+    color: #344c36;
+    font: normal 23px Georgia, serif;
+}
+
+.welcome p {
+    max-width: 650px;
+    margin: 0 16px 14px;
+    line-height: 1.7;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: 8px;
+    margin: 0 16px;
+}
+
+/* ---------- 10. Botões ---------- */
+
+.button {
+    padding: 8px 12px;
+    border: 1px solid #929584;
+    background: linear-gradient(#f7f5eb, #dedbcb);
+    color: #2f3f30;
+    font: bold 11px Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.button:hover {
+    border-color: #536c50;
+    background: #d9e0d0;
+}
+
+.button.primary {
+    border-color: #293d2c;
+    background: linear-gradient(#597656, #344b35);
+    color: white;
+}
+
+.button.primary:hover {
+    background: #486449;
+}
+
+/* ---------- 11. Títulos de seção ---------- */
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 19px 0 10px;
+    padding: 0 2px 7px;
+    border-bottom: 2px solid var(--green);
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #344a34;
+    font: normal 20px Georgia, serif;
+}
+
+.section-heading span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* ---------- 12. Pesquisa e filtros ---------- */
+
+.toolbar {
+    display: flex;
+    gap: 7px;
+    margin: 12px 0;
+}
+
+.toolbar input {
+    flex: 1;
+    min-width: 100px;
+}
+
+/* ---------- 13. Lista de discussões ---------- */
+
+.post-list {
+    display: grid;
+    gap: 8px;
+}
+
+.post-card {
+    display: grid;
+    grid-template-columns: 53px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.post-card:nth-child(4n) {
+    border-left: 3px solid #9b7867;
+}
+
+.post-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #b4b4a4;
+    background: #e4e2d6;
+    color: #52644d;
+    font: 26px Georgia, serif;
+}
+
+.post-card:nth-child(4n) .post-icon {
+    color: #875448;
+}
+
+.post-card h3 {
+    margin: 0 0 6px;
+    font: bold 14px Georgia, serif;
+}
+
+.post-card h3 button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--link);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.post-card h3 button:hover {
+    text-decoration: underline;
+}
+
+.meta {
+    margin-bottom: 6px;
+    color: #747668;
+    font-size: 10px;
+}
+
+.excerpt {
+    margin: 0 0 8px;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    padding: 3px 5px;
+    border: 1px solid #c2c4b5;
+    background: #e4e5d9;
+    color: #52614d;
+    font-size: 9px;
+}
+
+.post-stats {
+    color: #666b60;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+/* ---------- 14. Barra lateral ---------- */
+
+.sidebar .panel {
+    padding-bottom: 10px;
+}
+
+.sidebar .panel-title {
+    margin-bottom: 9px;
+}
+
+.side-links {
+    margin: 0;
+    padding: 0 13px 0 28px;
+    line-height: 2;
+}
+
+/* ---------- 15. Estatísticas ---------- */
+
+.status-panel p {
+    margin: 8px 0;
+    padding: 0 12px;
+    font-size: 11px;
+}
+
+.green {
+    color: #477044;
+    animation: flicker 8s infinite;
+}
+
+@keyframes flicker {
+    0%,
+    94%,
+    97%,
+    100% {
+        opacity: 1;
+    }
+
+    95%,
+    96% {
+        opacity: 0.45;
+    }
+}
+
+/* ---------- 16. Mural ---------- */
+
+.quote-panel p {
+    margin: 10px 12px;
+    font: italic 14px Georgia, serif;
+    line-height: 1.5;
+}
+
+.quote-panel small {
+    display: block;
+    margin: 0 12px;
+    color: #686c60;
+    font-size: 10px;
+    text-align: right;
+}
+
+/* ---------- 17. Identificação ---------- */
+
+.login-panel label,
+.login-panel input {
+    display: block;
+    width: calc(100% - 24px);
+    margin: 0 12px 6px;
+}
+
+.login-panel .tiny {
+    margin: 8px 12px 0;
+}
+
+.button.full {
+    display: block;
+    width: calc(100% - 24px);
+    margin: 0 12px;
+}
+
+/* ---------- 18. Contador de visitas ---------- */
+
+.counter {
+    margin: 8px 0 12px;
+    padding: 10px;
+    border: 3px double #9b9d8e;
+    background: #e8e5d9;
+    color: #687060;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.counter strong {
+    color: #3d523b;
+    font: bold 19px "Courier New", monospace;
+    letter-spacing: 3px;
+}
+
+/* ---------- 19. Página Sobre ---------- */
+
+.article {
+    padding: 14px;
+    line-height: 1.7;
+}
+
+.article h3 {
+    color: #40563c;
+    font: bold 16px Georgia, serif;
+}
+
+/* ---------- 20. Membros ---------- */
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.member {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.avatar {
+    display: grid;
+    flex: 0 0 42px;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #b5b6a7;
+    background: #e1e0d4;
+    color: #4a6047;
+    font: 20px Georgia, serif;
+}
+
+.member h3 {
+    margin: 0 0 5px;
+    font: bold 13px Georgia, serif;
+}
+
+.member p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* ---------- 21. Arquivos ---------- */
+
+.file-list {
+    display: grid;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.file-icon {
+    font-size: 25px;
+}
+
+.file-item div:nth-child(2) {
+    flex: 1;
+}
+
+.file-item strong {
+    font-size: 12px;
+}
+
+.file-item p {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.file-item button {
+    font-size: 10px;
+}
+
+/* ---------- 22. Nota secreta ---------- */
+
+.secret-box {
+    margin-top: 18px;
+}
+
+.secret-box > p,
+.secret-content {
+    padding: 0 12px;
+    line-height: 1.6;
+}
+
+.secret-content {
+    padding-bottom: 10px;
+    color: #574237;
+}
+
+.secret-content code {
+    padding: 2px 4px;
+    background: #e1dfd2;
+}
+
+.secret-box > button {
+    margin: 0 12px 12px;
+}
+
+.secret-hint {
+    color: #8a4b3c;
+    font-size: 10px;
+}
+
+/* ---------- 23. Rodapé ---------- */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px max(calc((100% - 1040px) / 2), 16px);
+    background: #283129;
+    color: #c9cbbb;
+    font-size: 10px;
+}
+
+/* ---------- 24. Janela de diálogo ---------- */
+
+dialog {
+    width: min(680px, calc(100% - 28px));
+    padding: 0;
+    border: 2px solid #596a53;
+    background: #f3f0e4;
+    color: #292d27;
+    box-shadow: 0 12px 50px #0008;
+}
+
+dialog::backdrop {
+    background: #182019a8;
+}
+
+.dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 13px;
+    background: #344d37;
+    color: #fff;
+    font: 14px Georgia, serif;
+}
+
+.close {
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+#dialogBody {
+    padding: 16px;
+    line-height: 1.65;
+}
+
+/* ---------- 25. Detalhes de uma discussão ---------- */
+
+.post-detail h2 {
+    margin: 0 0 8px;
+    color: #344c36;
+    font: normal 23px Georgia, serif;
+}
+
+.post-detail .body-text {
+    margin: 16px 0;
+    line-height: 1.75;
+    white-space: pre-line;
+}
+
+.comment {
+    padding: 10px 0;
+    border-top: 1px dotted #b2b3a5;
+}
+
+.comment strong {
+    color: #365137;
+}
+
+.comment p {
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.comment-form {
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 2px solid #b9bbaa;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    margin: 5px 0 8px;
+}
+
+.comment-form textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+/* ---------- 26. Acessibilidade: movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .green {
+        animation: none;
+    }
+}
+
+/* ---------- 27. Layout para tablets ---------- */
+
+@media (max-width: 780px) {
+    .layout {
+        grid-template-columns: 1fr;
+        padding: 0 12px 18px;
+    }
+
+    .nav,
+    .notice {
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+
+    .masthead {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .sidebar .panel {
+        margin-bottom: 0;
+    }
+
+    .counter,
+    .sidebar > .tiny {
+        grid-column: 1 / -1;
+    }
+
+    .header-stamp {
+        display: none;
+    }
+}
+
+/* ---------- 28. Layout para celulares ---------- */
+
+@media (max-width: 480px) {
+    .masthead {
+        gap: 9px;
+    }
+
+    .logo-mark {
+        width: 43px;
+        height: 43px;
+        font-size: 33px;
+        line-height: 39px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .tagline {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-link {
+        padding: 10px 9px;
+        font-size: 10px;
+    }
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .post-card {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .post-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .welcome h2 {
+        font-size: 20px;
+    }
+}

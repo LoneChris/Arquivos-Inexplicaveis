@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Arquivo Inexplicável — comunidade de relatos e pesquisas sobre o desconhecido."
+    >
+
+    <title>Arquivo Inexplicável :: Comunidade</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Identificação superior -->
+    <div class="topline">
+        ARQUIVO INEXPLICÁVEL
+        <span>— registros públicos sobre o que não sabemos explicar</span>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="masthead">
+        <div class="logo-mark">?</div>
+
+        <div>
+            <h1>Arquivo <em>Inexplicável</em></h1>
+
+            <p class="tagline">
+                RELATOS • LENDAS • PESQUISAS • ANOMALIAS COTIDIANAS
+            </p>
+        </div>
+
+        <div class="header-stamp">
+            ARQUIVO<br>
+            <b>ONLINE</b><br>
+            desde 2004
+        </div>
+    </header>
+
+    <!-- Navegação principal -->
+    <nav class="nav">
+        <button class="nav-link active" data-view="home">
+            Página inicial
+        </button>
+
+        <button class="nav-link" data-view="topics">
+            Tópicos
+        </button>
+
+        <button class="nav-link" data-view="members">
+            Membros
+        </button>
+
+        <button class="nav-link" data-view="archive">
+            Arquivos
+        </button>
+
+        <button class="nav-link" data-view="about">
+            Sobre o fórum
+        </button>
+    </nav>
+
+    <!-- Aviso da comunidade -->
+    <div class="notice">
+        <strong>LEMBRETE DA COMUNIDADE:</strong>
+        O conteúdo publicado é de responsabilidade de seus autores.
+        Respeite a privacidade de outras pessoas e não entre em locais
+        perigosos para investigar relatos.
+
+        <span class="notice-extra">
+            · Alguns horários exibidos podem estar incorretos.
+        </span>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main class="layout">
+
+        <!-- Coluna principal -->
+        <section class="main-column">
+
+            <!-- Apresentação -->
+            <div class="welcome panel">
+                <div class="panel-title">
+                    :: BEM-VINDO(A) AO ARQUIVO ::
+                </div>
+
+                <h2>Nem todo mistério precisa de uma resposta.</h2>
+
+                <p>
+                    Uma comunidade independente para reunir relatos
+                    estranhos, folclore local, arquivos esquecidos e
+                    pesquisas amadoras. Nem tudo aqui é inexplicável —
+                    mas algumas histórias deixam perguntas demais.
+                </p>
+
+                <div class="welcome-actions">
+                    <button class="button primary" id="browseBtn">
+                        Explorar relatos »
+                    </button>
+
+                    <button class="button" id="newTopicBtn">
+                        Enviar um relato
+                    </button>
+                </div>
+            </div>
+
+            <!-- Página inicial -->
+            <div id="view-home" class="view">
+                <div class="section-heading">
+                    <h2>Últimas discussões</h2>
+                    <span id="postCount">0 tópicos</span>
+                </div>
+
+                <div class="toolbar">
+                    <input
+                        id="searchInput"
+                        type="search"
+                        placeholder="Buscar no arquivo..."
+                        aria-label="Buscar tópicos"
+                    >
+
+                    <select
+                        id="categoryFilter"
+                        aria-label="Filtrar por categoria"
+                    >
+                        <option value="Todas">
+                            Todas as categorias
+                        </option>
+                        <option>Relatos</option>
+                        <option>Lendas urbanas</option>
+                        <option>Pesquisa</option>
+                        <option>Locais</option>
+                    </select>
+                </div>
+
+                <div id="postList" class="post-list"></div>
+            </div>
+
+            <!-- Índice de tópicos -->
+            <div id="view-topics" class="view hidden">
+                <div class="section-heading">
+                    <h2>Índice de tópicos</h2>
+                    <span>Todos os assuntos</span>
+                </div>
+
+                <p class="muted">
+                    Escolha um tópico para abrir a discussão e ler
+                    as respostas.
+                </p>
+
+                <div id="topicIndex" class="post-list"></div>
+            </div>
+
+            <!-- Membros -->
+            <div id="view-members" class="view hidden">
+                <div class="section-heading">
+                    <h2>Membros do fórum</h2>
+                    <span>Comunidade</span>
+                </div>
+
+                <div id="memberList" class="member-grid"></div>
+            </div>
+
+            <!-- Arquivos -->
+            <div id="view-archive" class="view hidden">
+                <div class="section-heading">
+                    <h2>Arquivo de documentos</h2>
+                    <span>Materiais públicos</span>
+                </div>
+
+                <p>
+                    Pequenos documentos de referência preparados para
+                    consulta. Os arquivos abaixo são fictícios e fazem
+                    parte deste protótipo narrativo.
+                </p>
+
+                <div id="fileList" class="file-list"></div>
+
+                <!-- Nota de moderação -->
+                <div class="panel secret-box">
+                    <div class="panel-title">
+                        :: RECADO DA MODERAÇÃO ::
+                    </div>
+
+                    <p>
+                        Alguns registros antigos foram movidos durante
+                        uma reorganização. Se um link não abrir, tente
+                        procurar pelo código do documento. Não é um
+                        erro… na maioria das vezes.
+                    </p>
+
+                    <button class="button" id="secretBtn">
+                        Ver nota de moderação
+                    </button>
+
+                    <div id="secretContent" class="secret-content hidden">
+                        <p>
+                            <strong>Registro interno 04-B:</strong>
+                            Não confundir repetição com coincidência.
+                            Três relatos independentes mencionam o mesmo
+                            detalhe:
+                            <code>uma porta que não aparece nas fotografias.</code>
+                        </p>
+
+                        <p class="muted">
+                            Dica: pesquise por <code>04-B</code> na página
+                            inicial. O resultado não está destacado no índice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobre o fórum -->
+            <div id="view-about" class="view hidden">
+                <div class="section-heading">
+                    <h2>Sobre o Arquivo</h2>
+                    <span>Leia antes de postar</span>
+                </div>
+
+                <div class="panel article">
+                    <p>
+                        O Arquivo Inexplicável começou como uma página
+                        pessoal de recortes, relatos e curiosidades
+                        sobre folclore e acontecimentos difíceis de
+                        explicar. Com o tempo, leitores passaram a
+                        enviar suas próprias histórias e o projeto
+                        virou uma pequena comunidade.
+                    </p>
+
+                    <p>
+                        O administrador, conhecido apenas pelo pseudônimo
+                        <strong>nó-cego</strong>, raramente fala sobre
+                        a origem do arquivo. Sua explicação é simples:
+                        “prefiro organizar os relatos a virar assunto deles”.
+                    </p>
+
+                    <h3>Regras básicas</h3>
+
+                    <ol>
+                        <li>Não publique dados pessoais de terceiros.</li>
+                        <li>
+                            Identifique rumores como rumores e indique
+                            fontes quando possível.
+                        </li>
+                        <li>
+                            Não incentive invasões, perseguições ou
+                            desafios perigosos.
+                        </li>
+                        <li>Trate outros membros com respeito.</li>
+                    </ol>
+
+                    <p class="muted">
+                        Versão demonstrativa 0.2 — comunidade fictícia
+                        para uso narrativo/RPG.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+
+            <!-- Acesso rápido -->
+            <div class="panel">
+                <div class="panel-title">:: ACESSO RÁPIDO ::</div>
+
+                <ul class="side-links">
+                    <li>
+                        <a href="#" data-view="topics">
+                            Todos os tópicos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-view="members">
+                            Lista de membros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-view="archive">
+                            Biblioteca de arquivos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" id="randomPostLink">
+                            Relato aleatório
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="panel status-panel">
+                <div class="panel-title">:: ESTATÍSTICAS ::</div>
+
+                <p>
+                    Discussões:
+                    <b id="sidePostCount">—</b>
+                </p>
+
+                <p>
+                    Membros cadastrados:
+                    <b>128</b>
+                </p>
+
+                <p>
+                    Visitantes agora:
+                    <b class="green" id="visitorCount">07</b>
+                </p>
+
+                <p>
+                    Última atualização:
+                    <b id="lastUpdated">agora há pouco</b>
+                </p>
+            </div>
+
+            <!-- Mural -->
+            <div class="panel quote-panel">
+                <div class="panel-title">:: MURAL ::</div>
+
+                <p>
+                    “Às vezes, a parte mais estranha de uma história
+                    é o detalhe que todo mundo esquece de mencionar.”
+                </p>
+
+                <small>— coruja_de_cobre, membro</small>
+            </div>
+
+            <!-- Identificação do visitante -->
+            <div class="panel login-panel">
+                <div class="panel-title">:: IDENTIFICAÇÃO ::</div>
+
+                <label for="nickname">Apelido de visitante</label>
+
+                <input
+                    id="nickname"
+                    maxlength="24"
+                    placeholder="visitante_anonimo"
+                >
+
+                <button id="saveNick" class="button full">
+                    Usar apelido
+                </button>
+
+                <p id="nickStatus" class="tiny muted">
+                    Você está navegando como visitante.
+                </p>
+            </div>
+
+            <!-- Contador de visitas -->
+            <div class="counter">
+                VISITAS<br>
+                <strong>00018427</strong>
+            </div>
+
+            <p class="tiny center muted">
+                O site muda conforme os relatos chegam.<br>
+                Se algo parecer fora do lugar, atualize a página.
+            </p>
+
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div>Arquivo Inexplicável © 2004–2026</div>
+
+        <div>
+            Este site é uma obra fictícia para RPG.
+            Nenhum relato é apresentado como fato real.
+        </div>
+    </footer>
+
+    <!-- Janela de diálogo -->
+    <dialog id="postDialog">
+        <form method="dialog" class="dialog-head">
+            <strong id="dialogTitle">Tópico</strong>
+
+            <button class="close" aria-label="Fechar">
+                ×
+            </button>
+        </form>
+
+        <div id="dialogBody"></div>
+    </dialog>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

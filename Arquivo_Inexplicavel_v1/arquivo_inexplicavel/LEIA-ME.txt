@@ -1,0 +1,28 @@
+ARQUIVO INEXPLICÁVEL — protótipo 0.1
+
+COMO ABRIR
+1. Extraia o ZIP para uma pasta.
+2. Abra index.html no navegador (Chrome, Firefox, Edge).
+3. Não precisa instalar nada nem ter internet.
+
+O QUE JÁ FUNCIONA
+- Navegação por páginas/seções.
+- Pesquisa e filtro por categoria.
+- Abrir tópicos e ler comentários.
+- Comentar usando um apelido salvo no navegador.
+- Ver perfis fictícios.
+- Baixar documentos .txt fictícios.
+- Nota secreta e tópico com referência 04-B.
+- Formulário para criar um tópico local durante a sessão.
+- Layout responsivo com visual de fórum antigo.
+
+LIMITAÇÕES IMPORTANTES
+Este é um protótipo frontend: não existe servidor, login real, banco de dados ou publicação compartilhada entre computadores.
+Comentários e apelido usam localStorage no navegador. Tópicos novos ficam apenas na memória enquanto a página está aberta.
+Não use dados pessoais reais. Todo conteúdo inicial é ficcional.
+
+PRÓXIMAS ETAPAS SUGERIDAS
+1. Definir o nome final, o pseudônimo do administrador e o período em que o fórum surgiu.
+2. Escrever os primeiros 8–12 tópicos e os perfis de membros.
+3. Adicionar páginas secretas e pistas narrativas com cuidado para que a fachada pública continue plausível.
+4. Se quiser publicar na internet com contas e mensagens compartilhadas, adicionar backend e banco de dados.

@@ -1,0 +1,88 @@
+/* Arquivo Inexplicável — estética de fórum independente dos anos 2000 */
+:root{--bg:#d7d5c9;--paper:#f3f0e4;--ink:#272b25;--green:#344d37;--green2:#587353;--line:#a5a593;--link:#1c4d79;--muted:#696d61;--red:#873e34}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px Verdana,Arial,sans-serif;background-image:radial-gradient(#bcbcaf .6px,transparent .6px);background-size:5px 5px}
+a{color:var(--link)}a:hover{color:#8b3d30;text-decoration:none}
+.topline{background:#242b24;color:#e4e2d6;padding:7px max(calc((100% - 1040px)/2),16px);font-size:10px;letter-spacing:1.2px}
+.topline span{color:#b8c1ad;letter-spacing:0}
+.masthead{max-width:1040px;margin:auto;display:flex;align-items:center;gap:15px;padding:22px 14px 18px}
+.logo-mark{height:57px;width:57px;border:3px double var(--green);color:var(--green);font:bold 44px Georgia;text-align:center;line-height:52px;transform:rotate(-5deg);background:#e8e5d8}
+h1{font:normal 32px Georgia,'Times New Roman',serif;margin:0;color:#283b2b;letter-spacing:-1px}
+h1 em{color:#7a4b3e;font-weight:normal}
+.tagline{font-size:9px;letter-spacing:1.5px;margin:7px 0 0;color:#62675b}
+.header-stamp{margin-left:auto;border:1px dashed #8e9583;padding:8px 12px;text-align:center;font-size:9px;color:#666d5c;transform:rotate(4deg)}
+.header-stamp b{font: bold 19px Georgia;color:#40533c}
+.nav{max-width:1040px;margin:0 auto;background:var(--green);display:flex;flex-wrap:wrap;padding:4px;border:1px solid #243728}
+.nav-link{background:transparent;border:0;color:#f1f0e5;padding:11px 17px;font: bold 11px Verdana;cursor:pointer}
+.nav-link:hover,.nav-link.active{background:#e3e0d2;color:#2e4230}
+.notice{max-width:1040px;margin:10px auto 16px;background:#ece8d9;border:1px solid #b5b19e;padding:9px 12px;font-size:11px;color:#575b4f}
+.layout{max-width:1040px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:16px;padding:0 0 22px}
+.main-column,.sidebar{min-width:0}
+.panel{background:var(--paper);border:1px solid var(--line);box-shadow:2px 2px 0 #c2c0b3;margin-bottom:13px}
+.panel-title{background:#e3e1d4;border-bottom:1px solid #b6b6a5;padding:8px 10px;color:#40553d;font:bold 10px Verdana;letter-spacing:1px}
+.welcome{padding-bottom:15px}
+.welcome h2{font:normal 23px Georgia,serif;margin:15px 16px 8px;color:#344c36}
+.welcome p{line-height:1.7;margin:0 16px 14px;max-width:650px}
+.welcome-actions{display:flex;gap:8px;margin:0 16px}
+.button{background:linear-gradient(#f7f5eb,#dedbcb);border:1px solid #929584;padding:8px 12px;color:#2f3f30;font:bold 11px Verdana;cursor:pointer}
+.button:hover{background:#d9e0d0;border-color:#536c50}
+.button.primary{background:linear-gradient(#597656,#344b35);color:white;border-color:#293d2c}
+.button.primary:hover{background:#486449}
+.button.full{width:100%;margin-top:7px}
+.section-heading{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--green);margin:19px 0 10px;padding:0 2px 7px}
+.section-heading h2{font:normal 20px Georgia,serif;margin:0;color:#344a34}
+.section-heading span{font-size:10px;color:var(--muted)}
+.toolbar{display:flex;gap:7px;margin:12px 0}
+input,select,textarea{font:12px Verdana;background:#fbfaf4;border:1px solid #a8aa9b;padding:8px;color:#292d27;max-width:100%}
+.toolbar input{flex:1;min-width:100px}
+.post-list{display:grid;gap:8px}
+.post-card{background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:53px minmax(0,1fr);padding:10px;gap:10px}
+.post-icon{width:48px;height:48px;background:#e4e2d6;border:1px solid #b4b4a4;display:grid;place-items:center;font:26px Georgia;color:#52644d}
+.post-card h3{font: bold 14px Georgia,serif;margin:0 0 6px}
+.post-card h3 button{font:inherit;color:var(--link);border:0;background:none;padding:0;text-align:left;cursor:pointer}
+.post-card h3 button:hover{text-decoration:underline}
+.meta{font-size:10px;color:#747668;margin-bottom:6px}
+.excerpt{font-size:12px;line-height:1.55;margin:0 0 8px}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:9px;background:#e4e5d9;border:1px solid #c2c4b5;padding:3px 5px;color:#52614d}
+.post-stats{font-size:10px;color:#666b60;white-space:nowrap}
+.sidebar .panel{padding-bottom:10px}
+.sidebar .panel-title{margin-bottom:9px}
+.side-links{margin:0;padding:0 13px 0 28px;line-height:2}
+.status-panel p{padding:0 12px;margin:8px 0;font-size:11px}
+.green{color:#477044}
+.quote-panel p{font:italic 14px Georgia,serif;line-height:1.5;margin:10px 12px}
+.quote-panel small{display:block;text-align:right;margin:0 12px;color:#686c60;font-size:10px}
+.login-panel label,.login-panel input{display:block;margin:0 12px 6px;width:calc(100% - 24px)}
+.login-panel .tiny{margin:8px 12px 0}
+.counter{border:3px double #9b9d8e;background:#e8e5d9;text-align:center;padding:10px;color:#687060;font-size:9px;letter-spacing:2px;margin:8px 0 12px}
+.counter strong{font: bold 19px 'Courier New',monospace;letter-spacing:3px;color:#3d523b}
+.tiny{font-size:10px;line-height:1.5}.muted{color:var(--muted)}.center{text-align:center}
+.article{padding:14px;line-height:1.7}.article h3{font: bold 16px Georgia;color:#40563c}
+.member-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.member{background:var(--paper);border:1px solid var(--line);padding:12px;display:flex;gap:10px;align-items:flex-start}
+.avatar{height:42px;width:42px;flex:0 0 42px;display:grid;place-items:center;background:#e1e0d4;border:1px solid #b5b6a7;font:20px Georgia;color:#4a6047}
+.member h3{font: bold 13px Georgia;margin:0 0 5px}.member p{font-size:11px;line-height:1.5;margin:0}
+.file-list{display:grid;gap:8px;margin:12px 0}
+.file-item{display:flex;align-items:center;gap:10px;padding:11px;background:var(--paper);border:1px solid var(--line)}
+.file-icon{font-size:25px}.file-item div:nth-child(2){flex:1}.file-item strong{font-size:12px}.file-item p{font-size:10px;color:var(--muted);margin:4px 0}
+.file-item button{font-size:10px}
+.secret-box{margin-top:18px}.secret-box>p,.secret-content{padding:0 12px;line-height:1.6}.secret-content{padding-bottom:10px;color:#574237}.secret-content code{background:#e1dfd2;padding:2px 4px}
+.secret-box>button{margin:0 12px 12px}
+.hidden{display:none!important}
+footer{background:#283129;color:#c9cbbb;padding:16px max(calc((100% - 1040px)/2),16px);font-size:10px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+dialog{width:min(680px,calc(100% - 28px));border:2px solid #596a53;background:#f3f0e4;color:#292d27;padding:0;box-shadow:0 12px 50px #0008}
+dialog::backdrop{background:#182019a8}
+.dialog-head{display:flex;justify-content:space-between;align-items:center;background:#344d37;color:#fff;padding:10px 13px;font:14px Georgia}
+.close{background:transparent;border:0;color:white;font-size:23px;cursor:pointer}
+#dialogBody{padding:16px;line-height:1.65}
+.post-detail h2{font:normal 23px Georgia;color:#344c36;margin:0 0 8px}
+.post-detail .body-text{white-space:pre-line;line-height:1.75;margin:16px 0}
+.comment{border-top:1px dotted #b2b3a5;padding:10px 0}
+.comment strong{color:#365137}.comment p{margin:5px 0;font-size:12px}
+.comment-form{border-top:2px solid #b9bbaa;padding-top:12px;margin-top:10px}
+.comment-form input,.comment-form textarea{width:100%;margin:5px 0 8px}
+.comment-form textarea{min-height:70px;resize:vertical}
+.secret-hint{font-size:10px;color:#8a4b3c}
+@media(max-width:780px){.layout{grid-template-columns:1fr;padding:0 12px 18px}.nav,.notice{margin-left:12px;margin-right:12px}.masthead{padding-left:14px;padding-right:14px}.sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.sidebar .panel{margin-bottom:0}.counter,.sidebar>.tiny{grid-column:1/-1}.header-stamp{display:none}}
+@media(max-width:480px){.masthead{gap:9px}.logo-mark{width:43px;height:43px;line-height:39px;font-size:33px}h1{font-size:25px}.tagline{font-size:8px;letter-spacing:.5px}.nav-link{padding:10px 9px;font-size:10px}.sidebar{grid-template-columns:1fr}.member-grid{grid-template-columns:1fr}.post-card{grid-template-columns:42px minmax(0,1fr);gap:8px;padding:8px}.post-icon{width:39px;height:39px}.toolbar{flex-direction:column}.welcome h2{font-size:20px}}
