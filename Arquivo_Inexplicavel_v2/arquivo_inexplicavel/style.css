@@ -1,19 +1,22 @@
-   /* ARQUIVO INEXPLICÁVEL
-   Folha de estilos principal */
+/* ARQUIVO INEXPLICÁVEL */
+/* Estética: fórum independente dos anos 2000 */
 
-/* ---------- 1. Variáveis globais ---------- */
+/* 1. VARIÁVEIS GLOBAIS */
 
 :root {
     --bg: #d7d5c9;
     --paper: #f3f0e4;
     --ink: #272b25;
     --green: #344d37;
+    --green2: #587353;
     --line: #a5a593;
     --link: #1c4d79;
     --muted: #696d61;
+    --red: #873e34;
 }
 
-/* ---------- 2. Reset e estilos gerais ---------- */
+
+/* 2. RESET E CONFIGURAÇÕES GERAIS */
 
 * {
     box-sizing: border-box;
@@ -21,14 +24,16 @@
 
 body {
     margin: 0;
-    background-color: var(--bg);
+    background: var(--bg);
+    color: var(--ink);
+    font: 13px Verdana, Arial, sans-serif;
+
     background-image: radial-gradient(
         #bcbcaf 0.6px,
         transparent 0.6px
     );
+
     background-size: 5px 5px;
-    color: var(--ink);
-    font: 13px Verdana, Arial, sans-serif;
 }
 
 a {
@@ -40,20 +45,426 @@ a:hover {
     text-decoration: none;
 }
 
-input,
-select,
-textarea {
-    max-width: 100%;
-    padding: 8px;
-    border: 1px solid #a8aa9b;
-    background: #fbfaf4;
-    color: #292d27;
-    font: 12px Verdana;
-}
-
 .hidden {
     display: none !important;
 }
+
+
+/* 3. CABEÇALHO DO SITE */
+
+/* Barra superior */
+.topline {
+    background: #242b24;
+    color: #e4e2d6;
+    padding: 7px max(calc((100% - 1040px) / 2), 16px);
+    font-size: 10px;
+    letter-spacing: 1.2px;
+}
+
+.topline span {
+    color: #b8c1ad;
+    letter-spacing: 0;
+}
+
+/* Identidade visual */
+.masthead {
+    max-width: 1040px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 14px 18px;
+}
+
+.logo-mark {
+    height: 57px;
+    width: 57px;
+    border: 3px double var(--green);
+    color: var(--green);
+    font: bold 44px Georgia;
+    text-align: center;
+    line-height: 52px;
+    transform: rotate(-5deg);
+    background: #e8e5d8;
+}
+
+h1 {
+    font: normal 32px Georgia, 'Times New Roman', serif;
+    margin: 0;
+    color: #283b2b;
+    letter-spacing: -1px;
+}
+
+h1 em {
+    color: #7a4b3e;
+    font-weight: normal;
+}
+
+.tagline {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin: 7px 0 0;
+    color: #62675b;
+}
+
+/* Carimbo decorativo */
+.header-stamp {
+    margin-left: auto;
+    border: 1px dashed #8e9583;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 9px;
+    color: #666d5c;
+    transform: rotate(4deg);
+}
+
+.header-stamp b {
+    font: bold 19px Georgia;
+    color: #40533c;
+}
+
+
+/* 4. NAVEGAÇÃO E AVISOS */
+
+/* Menu principal */
+.nav {
+    max-width: 1040px;
+    margin: 0 auto;
+    background: var(--green);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+    border: 1px solid #243728;
+}
+
+.nav-link {
+    background: transparent;
+    border: 0;
+    color: #f1f0e5;
+    padding: 11px 17px;
+    font: bold 11px Verdana;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #e3e0d2;
+    color: #2e4230;
+}
+
+/* Aviso abaixo do menu */
+.notice {
+    max-width: 1040px;
+    margin: 10px auto 16px;
+    background: #ece8d9;
+    border: 1px solid #b5b19e;
+    padding: 9px 12px;
+    font-size: 11px;
+    color: #575b4f;
+}
+
+
+/* 5. ESTRUTURA PRINCIPAL E PAINÉIS */
+
+/* Layout com conteúdo principal e barra lateral */
+.layout {
+    max-width: 1040px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 245px;
+    gap: 16px;
+    padding: 0 0 22px;
+}
+
+.main-column,
+.sidebar {
+    min-width: 0;
+}
+
+/* Painéis genéricos */
+.panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: 2px 2px 0 #c2c0b3;
+    margin-bottom: 13px;
+}
+
+.panel-title {
+    background: #e3e1d4;
+    border-bottom: 1px solid #b6b6a5;
+    padding: 8px 10px;
+    color: #40553d;
+    font: bold 10px Verdana;
+    letter-spacing: 1px;
+}
+
+/* Barra lateral */
+.sidebar .panel {
+    padding-bottom: 10px;
+}
+
+.sidebar .panel-title {
+    margin-bottom: 9px;
+}
+
+
+/* 6. PÁGINA INICIAL E BOAS-VINDAS */
+
+.welcome {
+    padding-bottom: 15px;
+}
+
+.welcome h2 {
+    font: normal 23px Georgia, serif;
+    margin: 15px 16px 8px;
+    color: #344c36;
+}
+
+.welcome p {
+    line-height: 1.7;
+    margin: 0 16px 14px;
+    max-width: 650px;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: 8px;
+    margin: 0 16px;
+}
+
+
+/* 7. BOTÕES */
+
+.button {
+    background: linear-gradient(#f7f5eb, #dedbcb);
+    border: 1px solid #929584;
+    padding: 8px 12px;
+    color: #2f3f30;
+    font: bold 11px Verdana;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #d9e0d0;
+    border-color: #536c50;
+}
+
+/* Botão principal */
+.button.primary {
+    background: linear-gradient(#597656, #344b35);
+    color: white;
+    border-color: #293d2c;
+}
+
+.button.primary:hover {
+    background: #486449;
+}
+
+/* Botão de largura total */
+.button.full {
+    width: 100%;
+    margin-top: 7px;
+}
+
+
+/* 8. TÍTULOS DE SEÇÃO E FERRAMENTAS */
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--green);
+    margin: 19px 0 10px;
+    padding: 0 2px 7px;
+}
+
+.section-heading h2 {
+    font: normal 20px Georgia, serif;
+    margin: 0;
+    color: #344a34;
+}
+
+.section-heading span {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+/* Barra de pesquisa e filtros */
+.toolbar {
+    display: flex;
+    gap: 7px;
+    margin: 12px 0;
+}
+
+/* Campos de formulário */
+input,
+select,
+textarea {
+    font: 12px Verdana;
+    background: #fbfaf4;
+    border: 1px solid #a8aa9b;
+    padding: 8px;
+    color: #292d27;
+    max-width: 100%;
+}
+
+.toolbar input {
+    flex: 1;
+    min-width: 100px;
+}
+
+
+/* 9. LISTA DE PUBLICAÇÕES */
+
+.post-list {
+    display: grid;
+    gap: 8px;
+}
+
+.post-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 53px minmax(0, 1fr);
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Ícone da publicação */
+.post-icon {
+    width: 48px;
+    height: 48px;
+    background: #e4e2d6;
+    border: 1px solid #b4b4a4;
+    display: grid;
+    place-items: center;
+    font: 26px Georgia;
+    color: #52644d;
+}
+
+/* Título da publicação */
+.post-card h3 {
+    font: bold 14px Georgia, serif;
+    margin: 0 0 6px;
+}
+
+.post-card h3 button {
+    font: inherit;
+    color: var(--link);
+    border: 0;
+    background: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.post-card h3 button:hover {
+    text-decoration: underline;
+}
+
+/* Metadados e resumo */
+.meta {
+    font-size: 10px;
+    color: #747668;
+    margin-bottom: 6px;
+}
+
+.excerpt {
+    font-size: 12px;
+    line-height: 1.55;
+    margin: 0 0 8px;
+}
+
+/* Etiquetas */
+.tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 9px;
+    background: #e4e5d9;
+    border: 1px solid #c2c4b5;
+    padding: 3px 5px;
+    color: #52614d;
+}
+
+/* Estatísticas */
+.post-stats {
+    font-size: 10px;
+    color: #666b60;
+    white-space: nowrap;
+}
+
+
+/* 10. BARRA LATERAL: LINKS E STATUS */
+
+/* Lista de links */
+.side-links {
+    margin: 0;
+    padding: 0 13px 0 28px;
+    line-height: 2;
+}
+
+/* Status do site */
+.status-panel p {
+    padding: 0 12px;
+    margin: 8px 0;
+    font-size: 11px;
+}
+
+.green {
+    color: #477044;
+}
+
+/* Frase em destaque */
+.quote-panel p {
+    font: italic 14px Georgia, serif;
+    line-height: 1.5;
+    margin: 10px 12px;
+}
+
+.quote-panel small {
+    display: block;
+    text-align: right;
+    margin: 0 12px;
+    color: #686c60;
+    font-size: 10px;
+}
+
+/* Login */
+.login-panel label,
+.login-panel input {
+    display: block;
+    margin: 0 12px 6px;
+    width: calc(100% - 24px);
+}
+
+.login-panel .tiny {
+    margin: 8px 12px 0;
+}
+
+/* Contador de visitantes */
+.counter {
+    border: 3px double #9b9d8e;
+    background: #e8e5d9;
+    text-align: center;
+    padding: 10px;
+    color: #687060;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin: 8px 0 12px;
+}
+
+.counter strong {
+    font: bold 19px 'Courier New', monospace;
+    letter-spacing: 3px;
+    color: #3d523b;
+}
+
+
+/* 11. CLASSES UTILITÁRIAS */
 
 .tiny {
     font-size: 10px;
@@ -68,425 +479,8 @@ textarea {
     text-align: center;
 }
 
-/* ---------- 3. Faixa superior ---------- */
 
-.topline {
-    padding: 7px max(calc((100% - 1040px) / 2), 16px);
-    background: #242b24;
-    color: #e4e2d6;
-    font-size: 10px;
-    letter-spacing: 1.2px;
-}
-
-.topline span {
-    color: #b8c1ad;
-    letter-spacing: 0;
-}
-
-/* ---------- 4. Cabeçalho ---------- */
-
-.masthead {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 1040px;
-    margin: auto;
-    padding: 22px 14px 18px;
-}
-
-.logo-mark {
-    width: 57px;
-    height: 57px;
-    border: 3px double var(--green);
-    background: #e8e5d8;
-    color: var(--green);
-    font: bold 44px Georgia, serif;
-    text-align: center;
-    line-height: 52px;
-    transform: rotate(-5deg);
-}
-
-h1 {
-    margin: 0;
-    color: #283b2b;
-    font: normal 32px Georgia, serif;
-    letter-spacing: -1px;
-}
-
-h1 em {
-    color: #7a4b3e;
-    font-weight: normal;
-}
-
-.tagline {
-    margin: 7px 0 0;
-    color: #62675b;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-}
-
-.header-stamp {
-    margin-left: auto;
-    padding: 8px 12px;
-    border: 1px dashed #8e9583;
-    color: #666d5c;
-    font-size: 9px;
-    text-align: center;
-    transform: rotate(4deg);
-}
-
-.header-stamp b {
-    color: #40533c;
-    font: bold 19px Georgia, serif;
-}
-
-/* ---------- 5. Navegação ---------- */
-
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 4px;
-    border: 1px solid #243728;
-    background: var(--green);
-}
-
-.nav-link {
-    padding: 11px 17px;
-    border: 0;
-    background: transparent;
-    color: #f1f0e5;
-    font: bold 11px Verdana, sans-serif;
-    cursor: pointer;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    background: #e3e0d2;
-    color: #2e4230;
-}
-
-/* ---------- 6. Aviso da comunidade ---------- */
-
-.notice {
-    max-width: 1040px;
-    margin: 10px auto 16px;
-    padding: 9px 12px;
-    border: 1px solid #b5b19e;
-    background: #ece8d9;
-    color: #575b4f;
-    font-size: 11px;
-}
-
-.notice-extra {
-    color: #7c4b3d;
-    font-style: italic;
-}
-
-/* ---------- 7. Layout principal ---------- */
-
-.layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 245px;
-    gap: 16px;
-    max-width: 1040px;
-    margin: auto;
-    padding: 0 0 22px;
-}
-
-.main-column,
-.sidebar {
-    min-width: 0;
-}
-
-/* ---------- 8. Painéis ---------- */
-
-.panel {
-    margin-bottom: 13px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    box-shadow: 2px 2px 0 #c2c0b3;
-}
-
-.panel-title {
-    padding: 8px 10px;
-    border-bottom: 1px solid #b6b6a5;
-    background: #e3e1d4;
-    color: #40553d;
-    font: bold 10px Verdana, sans-serif;
-    letter-spacing: 1px;
-}
-
-/* ---------- 9. Apresentação ---------- */
-
-.welcome {
-    padding-bottom: 15px;
-}
-
-.welcome h2 {
-    margin: 15px 16px 8px;
-    color: #344c36;
-    font: normal 23px Georgia, serif;
-}
-
-.welcome p {
-    max-width: 650px;
-    margin: 0 16px 14px;
-    line-height: 1.7;
-}
-
-.welcome-actions {
-    display: flex;
-    gap: 8px;
-    margin: 0 16px;
-}
-
-/* ---------- 10. Botões ---------- */
-
-.button {
-    padding: 8px 12px;
-    border: 1px solid #929584;
-    background: linear-gradient(#f7f5eb, #dedbcb);
-    color: #2f3f30;
-    font: bold 11px Verdana, sans-serif;
-    cursor: pointer;
-}
-
-.button:hover {
-    border-color: #536c50;
-    background: #d9e0d0;
-}
-
-.button.primary {
-    border-color: #293d2c;
-    background: linear-gradient(#597656, #344b35);
-    color: white;
-}
-
-.button.primary:hover {
-    background: #486449;
-}
-
-/* ---------- 11. Títulos de seção ---------- */
-
-.section-heading {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin: 19px 0 10px;
-    padding: 0 2px 7px;
-    border-bottom: 2px solid var(--green);
-}
-
-.section-heading h2 {
-    margin: 0;
-    color: #344a34;
-    font: normal 20px Georgia, serif;
-}
-
-.section-heading span {
-    color: var(--muted);
-    font-size: 10px;
-}
-
-/* ---------- 12. Pesquisa e filtros ---------- */
-
-.toolbar {
-    display: flex;
-    gap: 7px;
-    margin: 12px 0;
-}
-
-.toolbar input {
-    flex: 1;
-    min-width: 100px;
-}
-
-/* ---------- 13. Lista de discussões ---------- */
-
-.post-list {
-    display: grid;
-    gap: 8px;
-}
-
-.post-card {
-    display: grid;
-    grid-template-columns: 53px minmax(0, 1fr);
-    gap: 10px;
-    padding: 10px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-}
-
-.post-card:nth-child(4n) {
-    border-left: 3px solid #9b7867;
-}
-
-.post-icon {
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border: 1px solid #b4b4a4;
-    background: #e4e2d6;
-    color: #52644d;
-    font: 26px Georgia, serif;
-}
-
-.post-card:nth-child(4n) .post-icon {
-    color: #875448;
-}
-
-.post-card h3 {
-    margin: 0 0 6px;
-    font: bold 14px Georgia, serif;
-}
-
-.post-card h3 button {
-    padding: 0;
-    border: 0;
-    background: none;
-    color: var(--link);
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-}
-
-.post-card h3 button:hover {
-    text-decoration: underline;
-}
-
-.meta {
-    margin-bottom: 6px;
-    color: #747668;
-    font-size: 10px;
-}
-
-.excerpt {
-    margin: 0 0 8px;
-    font-size: 12px;
-    line-height: 1.55;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.tag {
-    padding: 3px 5px;
-    border: 1px solid #c2c4b5;
-    background: #e4e5d9;
-    color: #52614d;
-    font-size: 9px;
-}
-
-.post-stats {
-    color: #666b60;
-    font-size: 10px;
-    white-space: nowrap;
-}
-
-/* ---------- 14. Barra lateral ---------- */
-
-.sidebar .panel {
-    padding-bottom: 10px;
-}
-
-.sidebar .panel-title {
-    margin-bottom: 9px;
-}
-
-.side-links {
-    margin: 0;
-    padding: 0 13px 0 28px;
-    line-height: 2;
-}
-
-/* ---------- 15. Estatísticas ---------- */
-
-.status-panel p {
-    margin: 8px 0;
-    padding: 0 12px;
-    font-size: 11px;
-}
-
-.green {
-    color: #477044;
-    animation: flicker 8s infinite;
-}
-
-@keyframes flicker {
-    0%,
-    94%,
-    97%,
-    100% {
-        opacity: 1;
-    }
-
-    95%,
-    96% {
-        opacity: 0.45;
-    }
-}
-
-/* ---------- 16. Mural ---------- */
-
-.quote-panel p {
-    margin: 10px 12px;
-    font: italic 14px Georgia, serif;
-    line-height: 1.5;
-}
-
-.quote-panel small {
-    display: block;
-    margin: 0 12px;
-    color: #686c60;
-    font-size: 10px;
-    text-align: right;
-}
-
-/* ---------- 17. Identificação ---------- */
-
-.login-panel label,
-.login-panel input {
-    display: block;
-    width: calc(100% - 24px);
-    margin: 0 12px 6px;
-}
-
-.login-panel .tiny {
-    margin: 8px 12px 0;
-}
-
-.button.full {
-    display: block;
-    width: calc(100% - 24px);
-    margin: 0 12px;
-}
-
-/* ---------- 18. Contador de visitas ---------- */
-
-.counter {
-    margin: 8px 0 12px;
-    padding: 10px;
-    border: 3px double #9b9d8e;
-    background: #e8e5d9;
-    color: #687060;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.counter strong {
-    color: #3d523b;
-    font: bold 19px "Courier New", monospace;
-    letter-spacing: 3px;
-}
-
-/* ---------- 19. Página Sobre ---------- */
+/* 12. ARTIGOS E PÁGINAS DE CONTEÚDO */
 
 .article {
     padding: 14px;
@@ -494,11 +488,12 @@ h1 em {
 }
 
 .article h3 {
+    font: bold 16px Georgia;
     color: #40563c;
-    font: bold 16px Georgia, serif;
 }
 
-/* ---------- 20. Membros ---------- */
+
+/* 13. MEMBROS E PERFIS */
 
 .member-grid {
     display: grid;
@@ -507,38 +502,41 @@ h1 em {
 }
 
 .member {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 12px;
-    border: 1px solid var(--line);
     background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
 }
 
+/* Avatar */
 .avatar {
-    display: grid;
-    flex: 0 0 42px;
-    place-items: center;
-    width: 42px;
     height: 42px;
-    border: 1px solid #b5b6a7;
+    width: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
     background: #e1e0d4;
+    border: 1px solid #b5b6a7;
+    font: 20px Georgia;
     color: #4a6047;
-    font: 20px Georgia, serif;
 }
 
+/* Informações do membro */
 .member h3 {
+    font: bold 13px Georgia;
     margin: 0 0 5px;
-    font: bold 13px Georgia, serif;
 }
 
 .member p {
-    margin: 0;
     font-size: 11px;
     line-height: 1.5;
+    margin: 0;
 }
 
-/* ---------- 21. Arquivos ---------- */
+
+/* 14. ARQUIVOS E DOCUMENTOS */
 
 .file-list {
     display: grid;
@@ -551,8 +549,8 @@ h1 em {
     align-items: center;
     gap: 10px;
     padding: 11px;
-    border: 1px solid var(--line);
     background: var(--paper);
+    border: 1px solid var(--line);
 }
 
 .file-icon {
@@ -568,16 +566,17 @@ h1 em {
 }
 
 .file-item p {
-    margin: 4px 0;
-    color: var(--muted);
     font-size: 10px;
+    color: var(--muted);
+    margin: 4px 0;
 }
 
 .file-item button {
     font-size: 10px;
 }
 
-/* ---------- 22. Nota secreta ---------- */
+
+/* 15. CONTEÚDO SECRETO E PISTAS */
 
 .secret-box {
     margin-top: 18px;
@@ -595,8 +594,8 @@ h1 em {
 }
 
 .secret-content code {
-    padding: 2px 4px;
     background: #e1dfd2;
+    padding: 2px 4px;
 }
 
 .secret-box > button {
@@ -604,31 +603,18 @@ h1 em {
 }
 
 .secret-hint {
+    font-size: 10px;
     color: #8a4b3c;
-    font-size: 10px;
 }
 
-/* ---------- 23. Rodapé ---------- */
 
-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 16px max(calc((100% - 1040px) / 2), 16px);
-    background: #283129;
-    color: #c9cbbb;
-    font-size: 10px;
-}
-
-/* ---------- 24. Janela de diálogo ---------- */
-
+/* 16. JANELAS DE DIÁLOGO */
 dialog {
     width: min(680px, calc(100% - 28px));
-    padding: 0;
     border: 2px solid #596a53;
     background: #f3f0e4;
     color: #292d27;
+    padding: 0;
     box-shadow: 0 12px 50px #0008;
 }
 
@@ -636,46 +622,50 @@ dialog::backdrop {
     background: #182019a8;
 }
 
+/* Cabeçalho da janela */
 .dialog-head {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 13px;
+    align-items: center;
     background: #344d37;
     color: #fff;
-    font: 14px Georgia, serif;
+    padding: 10px 13px;
+    font: 14px Georgia;
 }
 
+/* Botão para fechar */
 .close {
-    border: 0;
     background: transparent;
+    border: 0;
     color: white;
     font-size: 23px;
     cursor: pointer;
 }
 
+/* Conteúdo da janela */
 #dialogBody {
     padding: 16px;
     line-height: 1.65;
 }
 
-/* ---------- 25. Detalhes de uma discussão ---------- */
 
+/* 17. DETALHES DAS PUBLICAÇÕES */
 .post-detail h2 {
-    margin: 0 0 8px;
+    font: normal 23px Georgia;
     color: #344c36;
-    font: normal 23px Georgia, serif;
+    margin: 0 0 8px;
 }
 
 .post-detail .body-text {
-    margin: 16px 0;
-    line-height: 1.75;
     white-space: pre-line;
+    line-height: 1.75;
+    margin: 16px 0;
 }
 
+/* Comentários */
 .comment {
-    padding: 10px 0;
     border-top: 1px dotted #b2b3a5;
+    padding: 10px 0;
 }
 
 .comment strong {
@@ -687,10 +677,11 @@ dialog::backdrop {
     font-size: 12px;
 }
 
+/* Formulário de comentários */
 .comment-form {
-    margin-top: 10px;
-    padding-top: 12px;
     border-top: 2px solid #b9bbaa;
+    padding-top: 12px;
+    margin-top: 10px;
 }
 
 .comment-form input,
@@ -704,33 +695,46 @@ dialog::backdrop {
     resize: vertical;
 }
 
-/* ---------- 26. Acessibilidade: movimento reduzido ---------- */
 
-@media (prefers-reduced-motion: reduce) {
-    .green {
-        animation: none;
-    }
+/* 18. RODAPÉ */
+footer {
+    background: #283129;
+    color: #c9cbbb;
+    padding: 16px max(calc((100% - 1040px) / 2), 16px);
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-/* ---------- 27. Layout para tablets ---------- */
 
+   /* 19. RESPONSIVIDADE: TABLETS E TELAS MÉDIAS */
 @media (max-width: 780px) {
+    /* Layout principal */
     .layout {
         grid-template-columns: 1fr;
         padding: 0 12px 18px;
     }
 
+    /* Menu e aviso */
     .nav,
     .notice {
-        margin-right: 12px;
         margin-left: 12px;
+        margin-right: 12px;
     }
 
+    /* Cabeçalho */
     .masthead {
-        padding-right: 14px;
         padding-left: 14px;
+        padding-right: 14px;
     }
 
+    .header-stamp {
+        display: none;
+    }
+
+    /* Barra lateral */
     .sidebar {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -745,15 +749,13 @@ dialog::backdrop {
     .sidebar > .tiny {
         grid-column: 1 / -1;
     }
-
-    .header-stamp {
-        display: none;
-    }
 }
 
-/* ---------- 28. Layout para celulares ---------- */
+
+/* 20. RESPONSIVIDADE: CELULARES */
 
 @media (max-width: 480px) {
+    /* Cabeçalho */
     .masthead {
         gap: 9px;
     }
@@ -761,8 +763,8 @@ dialog::backdrop {
     .logo-mark {
         width: 43px;
         height: 43px;
-        font-size: 33px;
         line-height: 39px;
+        font-size: 33px;
     }
 
     h1 {
@@ -774,11 +776,13 @@ dialog::backdrop {
         letter-spacing: 0.5px;
     }
 
+    /* Menu */
     .nav-link {
         padding: 10px 9px;
         font-size: 10px;
     }
 
+    /* Barra lateral e membros */
     .sidebar {
         grid-template-columns: 1fr;
     }
@@ -787,6 +791,7 @@ dialog::backdrop {
         grid-template-columns: 1fr;
     }
 
+    /* Publicações */
     .post-card {
         grid-template-columns: 42px minmax(0, 1fr);
         gap: 8px;
@@ -798,10 +803,12 @@ dialog::backdrop {
         height: 39px;
     }
 
+    /* Barra de pesquisa */
     .toolbar {
         flex-direction: column;
     }
 
+    /* Página inicial */
     .welcome h2 {
         font-size: 20px;
     }
